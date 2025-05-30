@@ -1,7 +1,7 @@
 "use client";
 
 import * as THREE from "three";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
 import {
   BallCollider,
@@ -12,6 +12,7 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
+import { Text } from "@react-three/drei";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -29,6 +30,8 @@ export default function ThreeDCard({
   return (
     <div className={className}>
       <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
         <Physics interpolate gravity={[0, gravity, 0]} timeStep={1 / 60}>
           <Band
             cardColor={cardColor}
@@ -46,20 +49,88 @@ export default function ThreeDCard({
 }
 
 function createGradientTexture() {
-  const size = 256;
+  const size = 512;
   const canvas = document.createElement("canvas");
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext("2d");
-  // Create vertical gradient
+
+  // Create a more sophisticated gradient
   const gradient = ctx.createLinearGradient(0, 0, 0, size);
-  gradient.addColorStop(0, "#a1c4fd"); // Light blue
-  gradient.addColorStop(1, "#c2e9fb"); // Lighter blue
+  gradient.addColorStop(0, "rgba(79, 172, 254, 0.8)");
+  gradient.addColorStop(0.5, "rgba(0, 242, 254, 0.6)");
+  gradient.addColorStop(1, "rgba(79, 172, 254, 0.8)");
+
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, size, size);
+
+  // Add overlay for better text contrast
+  const overlayGradient = ctx.createLinearGradient(0, size * 0.6, 0, size);
+  overlayGradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+  overlayGradient.addColorStop(1, "rgba(0, 0, 0, 0.4)");
+
+  ctx.fillStyle = overlayGradient;
+  ctx.fillRect(0, 0, size, size);
+
   const texture = new THREE.CanvasTexture(canvas);
   texture.needsUpdate = true;
   return texture;
+}
+
+function createProfileTexture() {
+  const size = 512;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d");
+
+  // Create background
+  ctx.fillStyle = "#f0f0f0";
+  ctx.fillRect(0, 0, size, size);
+
+  // Try to load profile image
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+
+  return new Promise((resolve) => {
+    img.onload = () => {
+      // Draw profile image
+      ctx.drawImage(img, 0, 0, size, size);
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.needsUpdate = true;
+      resolve(texture);
+    };
+
+    img.onerror = () => {
+      // Fallback: create a simple avatar
+      const gradient = ctx.createRadialGradient(
+        size / 2,
+        size / 2,
+        0,
+        size / 2,
+        size / 2,
+        size / 2
+      );
+      gradient.addColorStop(0, "#4facfe");
+      gradient.addColorStop(1, "#00f2fe");
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+
+      // Add initial
+      ctx.fillStyle = "white";
+      ctx.font = `${size / 4}px Arial`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("D", size / 2, size / 2);
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.needsUpdate = true;
+      resolve(texture);
+    };
+
+    img.src = "/profile.png";
+  });
 }
 
 function Band({
@@ -95,6 +166,12 @@ function Band({
   );
   const [dragged, drag] = useState(false);
   const [gradientMap] = useState(() => createGradientTexture());
+  const [profileTexture, setProfileTexture] = useState(null);
+
+  // Load profile texture
+  useEffect(() => {
+    createProfileTexture().then(setProfileTexture);
+  }, []);
 
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
@@ -169,34 +246,131 @@ function Band({
           type={dragged ? "kinematicPosition" : "dynamic"}
         >
           <CuboidCollider args={[width, height, 0.01]} />
-          <mesh
-            onPointerUp={(e) => (
-              e.target.releasePointerCapture(e.pointerId), drag(false)
-            )}
-            onPointerDown={(e) => (
-              e.target.setPointerCapture(e.pointerId),
-              drag(
-                new THREE.Vector3()
-                  .copy(e.point)
-                  .sub(vec.copy(card.current.translation()))
-              )
-            )}
-          >
-            <planeGeometry args={[width * 2, height * 2]} />
-            <meshPhysicalMaterial
-              transparent
-              opacity={cardOpacity}
-              color={cardColor}
-              map={gradientMap}
-              roughness={0.1}
-              metalness={0.25}
-              transmission={0.85}
-              ior={1.5}
-              thickness={0.5}
-              clearcoat={1}
-              clearcoatRoughness={0.1}
-            />
-          </mesh>
+          <group>
+            {/* Main card background */}
+            <mesh
+              onPointerUp={(e) => (
+                e.target.releasePointerCapture(e.pointerId), drag(false)
+              )}
+              onPointerDown={(e) => (
+                e.target.setPointerCapture(e.pointerId),
+                drag(
+                  new THREE.Vector3()
+                    .copy(e.point)
+                    .sub(vec.copy(card.current.translation()))
+                )
+              )}
+            >
+              <planeGeometry args={[width * 2, height * 2]} />
+              <meshPhysicalMaterial
+                transparent
+                opacity={0.95}
+                color="white"
+                map={gradientMap}
+                roughness={0.1}
+                metalness={0.05}
+                transmission={0.1}
+                ior={1.5}
+                thickness={0.5}
+                clearcoat={1}
+                clearcoatRoughness={0.1}
+                envMapIntensity={1}
+                reflectivity={0.5}
+              />
+            </mesh>
+
+            {/* Profile image area */}
+            <mesh position={[0, 0.2, 0.011]}>
+              <circleGeometry args={[0.25, 32]} />
+              <meshBasicMaterial
+                map={profileTexture}
+                transparent
+                opacity={0.9}
+              />
+            </mesh>
+
+            {/* Verification badge */}
+            <mesh position={[0.2, 0.35, 0.012]}>
+              <circleGeometry args={[0.04, 16]} />
+              <meshBasicMaterial color="white" />
+            </mesh>
+            <mesh position={[0.2, 0.35, 0.013]}>
+              <circleGeometry args={[0.03, 16]} />
+              <meshBasicMaterial color="#1DA1F2" />
+            </mesh>
+
+            {/* Name */}
+            <Text
+              position={[0, -0.2, 0.01]}
+              fontSize={0.15}
+              color="#ffffff"
+              anchorX="center"
+              anchorY="middle"
+            >
+              Dulguun ✓
+            </Text>
+
+            {/* Description */}
+            <Text
+              position={[0, -0.4, 0.01]}
+              fontSize={0.08}
+              color="rgba(255, 255, 255, 0.9)"
+              anchorX="center"
+              anchorY="middle"
+              maxWidth={1.4}
+              textAlign="center"
+            >
+              A Software Developer focused on{"\n"}full-stack development and
+              Odoo customization.
+            </Text>
+
+            {/* Stats */}
+            <group position={[-0.4, -0.65, 0.01]}>
+              <Text
+                position={[0, 0, 0]}
+                fontSize={0.06}
+                color="rgba(255, 255, 255, 0.8)"
+                anchorX="left"
+                anchorY="middle"
+              >
+                👥 312
+              </Text>
+            </group>
+
+            <group position={[0, -0.65, 0.01]}>
+              <Text
+                position={[0, 0, 0]}
+                fontSize={0.06}
+                color="rgba(255, 255, 255, 0.8)"
+                anchorX="center"
+                anchorY="middle"
+              >
+                📋 48
+              </Text>
+            </group>
+
+            {/* Follow button */}
+            <mesh position={[0.4, -0.65, 0.012]}>
+              <planeGeometry args={[0.25, 0.08]} />
+              <meshPhysicalMaterial
+                transparent
+                opacity={0.8}
+                color="white"
+                roughness={0.2}
+                metalness={0.1}
+                clearcoat={0.5}
+              />
+            </mesh>
+            <Text
+              position={[0.4, -0.65, 0.02]}
+              fontSize={0.05}
+              color="#333333"
+              anchorX="center"
+              anchorY="middle"
+            >
+              Follow +
+            </Text>
+          </group>
         </RigidBody>
       </group>
       <mesh ref={band}>
