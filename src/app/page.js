@@ -9,8 +9,10 @@ import Hero from "./components/Hero";
 import About from "./components/sections/About";
 import Experience from "./components/sections/Experience";
 import Projects from "./components/sections/Projects";
+import Gallery from "./components/sections/Gallery";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +35,7 @@ export default function Home() {
     { id: "about", name: "About", icon: "👨‍💻" },
     { id: "experience", name: "Experience", icon: "💼" },
     { id: "projects", name: "Projects", icon: "🚀" },
+    { id: "gallery", name: "Gallery", icon: "🖼️" },
   ];
 
   const scrollToSection = (id) => {
@@ -166,6 +169,10 @@ export default function Home() {
 
         <section id="projects" className="relative scroll-mt-20 animate-item">
           <Projects isDarkMode={isDarkMode} />
+        </section>
+
+        <section id="gallery" className="relative scroll-mt-20 animate-item">
+          <Gallery isDarkMode={isDarkMode} />
         </section>
 
         <Footer isDarkMode={isDarkMode} />
