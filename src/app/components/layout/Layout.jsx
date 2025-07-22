@@ -7,6 +7,7 @@ import {
   Award,
   MessageSquare,
   Layout as LayoutIcon,
+  GalleryHorizontal,
 } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -59,6 +60,7 @@ const LayoutWithTabs = ({ children, renderTabContent }) => {
     { name: "Certs", icon: <Award size={14} /> },
     { name: "Blog", icon: <MessageSquare size={14} /> },
     { name: "Components", icon: <LayoutIcon size={14} /> },
+    { name: "Gallery", icon: <LayoutIcon size={14} /> },
   ];
 
   const toggleTheme = () => {

@@ -104,7 +104,7 @@ const Projects = ({ isDarkMode }) => {
 
   const projects = [
     {
-      title: "Odoo Inventory Extension",
+      title: "Odoo Loan Collateral Module",
       description:
         "Custom Odoo module that extends inventory management with advanced forecasting capabilities and integrates with external logistics systems.",
       technologies: ["Odoo", "Python", "XML", "PostgreSQL"],
@@ -154,11 +154,6 @@ const Projects = ({ isDarkMode }) => {
         ))}
       </div>
 
-      <div className="mt-8 text-center">
-        <Button variant="primary" icon="arrow" href="#">
-          View All Projects
-        </Button>
-      </div>
     </div>
   );
 };

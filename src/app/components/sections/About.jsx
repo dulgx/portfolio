@@ -1,4 +1,3 @@
-// src/app/components/sections/About.jsx - About Section with Liquid Glass Cards
 import React from "react";
 import SectionHeader from "../ui/SectionHeader";
 import GlassCard from "../ui/GlassCard"; // Liquid glass container component
@@ -18,14 +17,14 @@ const About = ({ isDarkMode }) => {
 
   const education = [
     {
-      degree: "BSc Computer Science",
-      institution: "University of Technology",
-      period: "2018 - 2022",
+      degree: "Japanese Language",
+      institution: "Yu language academy - Tokyo",
+      period: "2021 - 2023",
     },
     {
-      degree: "Full Stack Development Certification",
-      institution: "Code Academy",
-      period: "2022",
+      degree: "Electrical Engineering",
+      institution: "National University of Mongolia",
+      period: "2016 - 2020",
     },
   ];
 
