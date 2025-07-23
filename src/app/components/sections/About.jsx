@@ -34,17 +34,13 @@ const About = ({ isDarkMode }) => {
 
       <div className="prose prose-zinc dark:prose-invert max-w-none mb-8">
         <p className="text-lg text-zinc-700 dark:text-zinc-300 font-sans leading-relaxed">
-          Full Stack Developer with expertise in{" "}
-          <span className="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-300">
-            Odoo 16
-          </span>{" "}
-          and modern web technologies. Passionate about creating elegant,
-          user-friendly applications that solve real business problems.
-        </p>
-        <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-          I specialize in building robust business applications and responsive
-          web interfaces. My approach combines technical excellence with a deep
-          understanding of user needs.
+          Hi, I am a Software Developer with a background in Electronics
+          Engineering and experience in Odoo ERP development and front-end
+          development. I have worked with technologies like React JS, Python,
+          and JavaScript, and I enjoy learning new tools to build efficient
+          solutions. I am passionate about improving my skills and applying them
+          to real-world projects, while solving challenges and working to make
+          systems more scalable and effective.
         </p>
       </div>
 

@@ -61,33 +61,38 @@ const ExperienceItem = ({
 const Experience = ({ isDarkMode }) => {
   const experiences = [
     {
-      title: "Developer",
-      company: "Example Company",
-      period: "2023 - Present",
+      title: "Software Developer",
+      company: "Sendly NBFI",
+      period: "2024 - Present",
       description:
-        "Leading development of custom Odoo 16 modules and implementing full-stack solutions for enterprise clients.",
+        "Created and developed new modules in the Odoo ERP system, automated loan operations, performed system improvements and maintenance, and fixed errors and bugs as part of the ongoing development process.",
       achievements: [
-        "Developed and maintained custom Odoo modules for inventory management and accounting",
-        "Implemented RESTful API integrations with third-party services",
-        "Optimized database queries, improving system performance by 40%",
-        "Mentored junior developers and conducted code reviews",
+        "Used version control with GitHub, GitLab, and Azure DevOps for collaboration and maintaining code integrity.",
+        "Streamlined loan data management by migrating manual entry and calculations from Excel to Odoo ERP. This included livestock loan research, Credit score processing, and loan calculations. The migration enabled automated calculation of loans, eligible amounts, and debt-to-income ratios etc.",
+        "Focused on deepening knowledge in API integration, gateway connections, and database management, while also continuing to learn new and widely used programming languages and technologies.",
       ],
       technologies: ["Odoo", "Python", "PostgreSQL", "JavaScript"],
       isLatest: true,
     },
     {
-      title: "Junior Web Developer",
-      company: "Tech Solutions",
-      period: "2021 - 2023",
+      title: "IT Specialist",
+      company: "Sendly NBFI",
+      period: "May 2023 - August 2024",
       description:
-        "Focused on front-end development using React and back-end APIs using Python Flask.",
+        "Managed and administered software systems at the permission level, including Active Directory domain management, email services, financial software, internal web applications, and Office 365.",
       achievements: [
-        "Built responsive web interfaces for client applications",
-        "Developed RESTful APIs with Python Flask",
-        "Implemented authentication and authorization systems",
-        "Participated in Agile development processes",
+        "Provided technical support, troubleshooting both hardware and software issues remotely and on-site, including at Ulaanbaatar and countryside branches.",
+        "Ensured the stable and reliable operation of the network, performed network configuration, and adhered to information security policies.",
+        "Reinforced prior knowledge of web development and self-studied React JS and Tailwind CSS. As a result, independently developed and deployed an internal employee and file directory web application for the company’s internal use.",
       ],
-      technologies: ["React", "Flask", "JavaScript", "Python"],
+      technologies: [
+        "React",
+        "JavaScript",
+        "Troubleshoot",
+        "Hardware configuration",
+        "Active Directory",
+        "Office 365",
+      ],
       isLatest: false,
     },
   ];

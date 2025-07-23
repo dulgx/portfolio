@@ -34,10 +34,12 @@ const ProjectCard = ({
         />
         <div className="absolute inset-0 bg-gradient-to-br from-zinc-500/10 to-zinc-900/40 dark:from-zinc-800/40 dark:to-zinc-950/80" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <IconComponent
-            size={48}
-            className="text-zinc-900/30 dark:text-zinc-300/20"
-          />
+          {IconComponent && (
+            <IconComponent
+              size={48}
+              className="text-zinc-900/30 dark:text-zinc-300/20"
+            />
+          )}
         </div>
         <div className="absolute top-4 right-4 flex space-x-2">
           {githubUrl && (
@@ -75,8 +77,10 @@ const ProjectCard = ({
         </div>
 
         <a
-          href="#"
+          href={liveUrl || "#"}
           className="inline-flex items-center text-sm font-medium text-zinc-900 dark:text-zinc-200 hover:text-zinc-700 dark:hover:text-zinc-50 transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           View Project <ChevronRight size={16} className="ml-1" />
         </a>
@@ -93,53 +97,45 @@ const Projects = ({ isDarkMode }) => {
     backgroundSize: "20px 20px",
   };
 
-  const linePattern = {
-    backgroundImage: `repeating-linear-gradient(315deg, ${
-      isDarkMode ? "rgba(63, 63, 70, 0.1)" : "rgba(161, 161, 170, 0.1)"
-    } 0, ${
-      isDarkMode ? "rgba(63, 63, 70, 0.1)" : "rgba(161, 161, 170, 0.1)"
-    } 1px, transparent 1px, transparent 10%)`,
-    backgroundSize: "10px 10px",
+  const photoPattern = {
+    backgroundImage: "url('/screenshot-1.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  };
+
+  const stocklabPattern = {
+    backgroundImage: "url('/screenshot-2.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   };
 
   const projects = [
     {
-      title: "Odoo Loan Collateral Module",
+      title: "React Intranet Employee Directory",
       description:
-        "Custom Odoo module that extends inventory management with advanced forecasting capabilities and integrates with external logistics systems.",
+        "Independently developed and deployed an internal employee and file directory web application for the company’s internal use, reinforcing prior knowledge of web development and self-studying React JS and Tailwind CSS.",
+      technologies: ["React", "Tailwind", "Chart.js", "REST API"],
+      pattern: photoPattern,
+      githubUrl: "#",
+      liveUrl: "https://sendly-intranet-copy.vercel.app/",
+    },
+    {
+      title: "Stocklab Web Mock",
+      description:
+        "Developed a mock web interface for Stocklab using React, Tailwind CSS, and Vite. The project demonstrates a modern, responsive UI and rapid prototyping capabilities, focusing on clean design and usability.",
+      technologies: ["React", "Tailwind CSS", "Vite"],
+      pattern: stocklabPattern,
+      githubUrl: "#",
+      liveUrl: "https://dulgx.github.io/stocklab-main/",
+    },
+    {
+      title: "Odoo Loan Module",
+      description:
+        "Created and developed new modules in the Odoo ERP system, automated loan operations, performed system improvements and maintenance, and fixed errors and bugs as part of the ongoing development process.",
       technologies: ["Odoo", "Python", "XML", "PostgreSQL"],
       icon: Code,
       pattern: dotPattern,
       githubUrl: "#",
-      liveUrl: "#",
-    },
-    {
-      title: "React Admin Dashboard",
-      description:
-        "Comprehensive admin dashboard built with React, Tailwind CSS, and integrated with RESTful APIs for real-time data visualization and management.",
-      technologies: ["React", "Tailwind", "Chart.js", "REST API"],
-      icon: Layout,
-      pattern: linePattern,
-      githubUrl: "#",
-      liveUrl: "#",
-    },
-    {
-      title: "AI-Powered Chat Application",
-      description:
-        "Real-time chat application with AI-assisted responses, multi-language support, and end-to-end encryption for secure communications.",
-      technologies: ["Next.js", "Socket.io", "OpenAI API", "MongoDB"],
-      icon: MessageSquare,
-      pattern: dotPattern,
-      githubUrl: "#",
-      liveUrl: "#",
-    },
-    {
-      title: "E-Commerce Platform",
-      description:
-        "Full-featured e-commerce solution with inventory management, payment processing, and customer relationship tools for small businesses.",
-      technologies: ["Odoo", "Python", "Stripe API", "PostgreSQL"],
-      icon: Briefcase,
-      pattern: linePattern,
       liveUrl: "#",
     },
   ];
@@ -153,7 +149,6 @@ const Projects = ({ isDarkMode }) => {
           <ProjectCard key={index} {...project} isDarkMode={isDarkMode} />
         ))}
       </div>
-
     </div>
   );
 };

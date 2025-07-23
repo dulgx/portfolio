@@ -58,8 +58,15 @@ const Button = ({
   );
 
   if (href && !disabled) {
+    // Only add 'download' attribute if provided
+    const { download, ...restProps } = props;
     return (
-      <a href={href} className={classes} {...props}>
+      <a
+        href={href}
+        className={classes}
+        {...(download ? { download } : {})}
+        {...restProps}
+      >
         {content}
       </a>
     );

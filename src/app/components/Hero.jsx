@@ -1,6 +1,7 @@
 import React from "react";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import Button from "./ui/Button";
+import profileImg from "../../../public/profile.png";
 
 // Glass Card wrapper to create the Apple liquid glass effect
 const GlassCard = ({ isDarkMode, children }) => {
@@ -24,9 +25,13 @@ const GlassCard = ({ isDarkMode, children }) => {
 const ContactInfo = ({ isDarkMode }) => {
   const contactItems = [
     { icon: MapPin, text: "Ulaanbaatar, Mongolia", href: null },
-    { icon: Phone, text: "+976 777 888 148", href: "tel:+976777888148" },
-    { icon: Mail, text: "dulguun@gmail.com", href: "mailto:dulguun@gmail.com" },
-    { icon: ExternalLink, text: "example.com", href: "https://example.com" },
+    { icon: Phone, text: "+976 88154711", href: "tel:+97688154711" },
+    {
+      icon: Mail,
+      text: "dulguunnu@gmail.com",
+      href: "mailto:dulguunnu@gmail.com",
+    },
+    { icon: ExternalLink, text: "dulgx.com", href: "https://dulgx.com" },
   ];
 
   return (
@@ -84,7 +89,11 @@ const ProfileAvatar = ({ isDarkMode }) => {
   return (
     <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-zinc-800 border-4 border-zinc-700/50 dark:border-zinc-700 shadow-lg flex items-center justify-center text-5xl font-bold text-zinc-50 font-sans relative overflow-hidden">
       <div className="absolute inset-0" style={linePattern}></div>
-      <span className="relative z-10">D</span>
+      <img
+        src={profileImg.src ? profileImg.src : profileImg}
+        alt="Profile"
+        className="relative z-10 w-full h-full object-cover rounded-full"
+      />
     </div>
   );
 };
@@ -99,7 +108,7 @@ const CurrentStatus = ({ isDarkMode }) => (
       <span className="font-medium text-zinc-900 dark:text-zinc-100">
         Developer{" "}
         <span className="text-zinc-600 dark:text-zinc-400 font-mono">
-          @Example Company
+          @Sendly NBFI
         </span>
       </span>
     </div>
@@ -108,10 +117,10 @@ const CurrentStatus = ({ isDarkMode }) => (
 
 const ActionButtons = () => (
   <div className="flex flex-wrap gap-3 pt-2">
-    <Button variant="primary" icon="arrow" href="#">
+    <Button variant="primary" icon="arrow" href="/Dulguun CV.pdf" download>
       Download Resume
     </Button>
-    <Button variant="secondary" href="#">
+    <Button variant="secondary" href="mailto:dulguunnu@gmail.com">
       Contact Me
     </Button>
   </div>

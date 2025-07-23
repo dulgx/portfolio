@@ -34,14 +34,14 @@ const Footer = ({ isDarkMode }) => {
           {/* Social Links */}
           <div className="flex space-x-4">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/dulgx"
               aria-label="GitHub"
               className="p-2 rounded-full transition-colors hover:text-zinc-900 dark:hover:text-white"
             >
               <Github size={20} className="text-zinc-500 dark:text-zinc-400" />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/dulguun-p-69b06b180/"
               aria-label="LinkedIn"
               className="p-2 rounded-full transition-colors hover:text-zinc-900 dark:hover:text-white"
             >

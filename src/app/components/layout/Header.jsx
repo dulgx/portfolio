@@ -5,7 +5,7 @@ import { Github, Sun, Moon } from "lucide-react";
 const SocialLinks = ({ isDarkMode }) => (
   <>
     <a
-      href="https://github.com/yourusername"
+      href="https://github.com/dulgx"
       className={`p-2 rounded-full ${
         isDarkMode
           ? "hover:bg-white/10 backdrop-blur-sm"
@@ -24,7 +24,7 @@ const SocialLinks = ({ isDarkMode }) => (
     </a>
 
     <a
-      href="https://linkedin.com/in/yourusername"
+      href="https://www.linkedin.com/in/dulguun-p-69b06b180/"
       className={`p-2 rounded-full ${
         isDarkMode
           ? "hover:bg-white/10 backdrop-blur-sm"
@@ -206,6 +206,7 @@ const Header = ({
             </div>
 
             {/* Theme Toggle */}
+            {/*
             <button
               onClick={toggleTheme}
               className={`p-3 rounded-2xl backdrop-blur-md border transition-all duration-300 hover:scale-110 ${
@@ -229,6 +230,7 @@ const Header = ({
                 />
               )}
             </button>
+            */}
 
             {/* Mobile Menu Toggle */}
             {navigationItems.length > 0 && (
