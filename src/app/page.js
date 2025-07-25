@@ -173,6 +173,7 @@ export default function Home() {
 
         <Footer isDarkMode={isDarkMode} />
       </div>
+      <SpeedInsights />
     </div>
   );
 }
