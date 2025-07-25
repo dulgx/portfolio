@@ -13,6 +13,7 @@ import Gallery from "./components/sections/Gallery";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -174,6 +175,7 @@ export default function Home() {
         <Footer isDarkMode={isDarkMode} />
       </div>
       <SpeedInsights />
+      <Analytics/>
     </div>
   );
 }
