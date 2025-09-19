@@ -25,7 +25,7 @@ const GlassCard = ({ isDarkMode, children }) => {
 const ContactInfo = ({ isDarkMode }) => {
   const contactItems = [
     { icon: MapPin, text: "Ulaanbaatar, Mongolia", href: null },
-    { icon: Phone, text: "+976 88154711", href: "tel:+97688154711" },
+    { icon: Phone, text: "", href: "" },
     {
       icon: Mail,
       text: "dulguunnu@gmail.com",

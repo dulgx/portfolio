@@ -129,7 +129,7 @@ const Projects = ({ isDarkMode }) => {
       liveUrl: "https://dulgx.github.io/stocklab-main/",
     },
     {
-      title: "Odoo Loan Module",
+      title: "Odoo Collateral Loan Module",
       description:
         "Created and developed new modules in the Odoo ERP system, automated loan operations, performed system improvements and maintenance, and fixed errors and bugs as part of the ongoing development process.",
       technologies: ["Odoo", "Python", "XML", "PostgreSQL"],
