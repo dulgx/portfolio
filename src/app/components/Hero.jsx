@@ -39,11 +39,11 @@ const ContactInfo = ({ isDarkMode }) => {
           <a
             key={index}
             href={item.href}
-            className={`${
+            className={`group/link ${
               isDarkMode
-                ? "text-zinc-300 hover:text-zinc-100"
-                : "text-zinc-600 hover:text-zinc-900"
-            } transition-colors ${
+                ? "text-zinc-300 hover:text-cyan-400"
+                : "text-zinc-600 hover:text-cyan-600"
+            } transition-all duration-300 hover:scale-105 magnetic ${
               item.icon === ExternalLink ? "hover:underline" : ""
             }`}
           >
@@ -81,14 +81,17 @@ const ProfileAvatar = ({ isDarkMode }) => {
 
 const CurrentStatus = ({ isDarkMode }) => (
   <div>
-    <div className="font-medium text-sm text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-1">
+    <div className="font-medium text-sm bg-gradient-to-r from-zinc-500 to-zinc-600 dark:from-zinc-400 dark:to-zinc-500 bg-clip-text text-transparent uppercase tracking-wider mb-1">
       Currently
     </div>
     <div className="flex items-center">
-      <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+      <span className="relative inline-flex w-2 h-2 mr-2">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+        <span className="relative inline-flex rounded-full w-2 h-2 bg-cyan-500"></span>
+      </span>
       <span className="font-medium text-zinc-900 dark:text-zinc-100">
         Developer{" "}
-        <span className="text-zinc-600 dark:text-zinc-400 font-mono">
+        <span className="bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400 bg-clip-text text-transparent font-mono">
           @Sendly NBFI
         </span>
       </span>
@@ -132,10 +135,10 @@ const Hero = ({ isDarkMode }) => {
             <div className="md:w-2/3 md:pl-12">
               {/* Name and Title */}
               <div className="mb-6">
-                <h1 className="text-4xl md:text-5xl font-bold mb-2 font-sans bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-zinc-50 dark:via-zinc-300 dark:to-zinc-50 bg-clip-text text-transparent">
+                <h1 className="text-4xl md:text-5xl font-bold mb-2 font-sans bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 dark:from-cyan-300 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent animate-gradient hero-title">
                   Dulguun
                 </h1>
-                <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-300 mb-4 font-sans font-medium">
+                <p className="text-xl md:text-2xl bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 dark:from-zinc-300 dark:via-zinc-200 dark:to-zinc-300 bg-clip-text text-transparent mb-4 font-sans font-medium hero-subtitle">
                   Full Stack Developer & Odoo Specialist
                 </p>
 

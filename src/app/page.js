@@ -24,6 +24,7 @@ export default function Home() {
   const [themePreference, setThemePreference] = useState("dark");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
   const toggleTheme = () => {
     const newTheme = themePreference === "dark" ? "light" : "dark";
@@ -113,6 +114,18 @@ export default function Home() {
     });
   }, []);
 
+  // Spotlight cursor effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   // Gradient overlay - reduced opacity for better video visibility
   const overlayStyle = {
     background: isDarkMode ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0.2)",
@@ -124,9 +137,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-black">
+      {/* Animated mesh gradient background */}
+      <div className="fixed inset-0 mesh-gradient opacity-30" />
+
       {/* Fullscreen video background */}
       <video
-        className="fixed inset-0 w-full h-full object-cover"
+        className="fixed inset-0 w-full h-full object-cover opacity-50"
         src="/background.mp4"
         autoPlay
         loop
@@ -136,6 +152,25 @@ export default function Home() {
 
       {/* Semi-transparent overlay for content contrast */}
       <div style={overlayStyle} />
+
+      {/* Spotlight cursor effect */}
+      <div
+        className="spotlight"
+        style={{
+          '--x': `${mousePosition.x}%`,
+          '--y': `${mousePosition.y}%`
+        } as React.CSSProperties}
+      />
+
+      {/* Premium grain texture overlay */}
+      <div className="grain" />
+
+      {/* Floating particles/orbs */}
+      <div className="fixed inset-0 pointer-events-none z-1 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+      </div>
 
       <div className="relative z-10 text-zinc-50">
         <Header

@@ -27,8 +27,8 @@ const ScrollProgress = ({ isDarkMode }) => {
       <div
         className={`
           h-full transition-all duration-100 ease-out
-          bg-gradient-to-r from-zinc-400 via-zinc-500 to-zinc-600
-          shadow-lg shadow-zinc-500/50
+          bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500
+          shadow-lg shadow-cyan-500/50
         `}
         style={{ width: `${scrollProgress}%` }}
       />
