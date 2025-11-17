@@ -15,18 +15,18 @@ const Button = ({
   ...props
 }) => {
   const baseClasses =
-    "inline-flex items-center justify-center font-medium transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2";
+    "inline-flex items-center justify-center font-medium transition-all duration-300 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
 
   const variants = {
     primary:
-      "bg-zinc-900 dark:bg-zinc-800 text-zinc-50 hover:bg-zinc-800 dark:hover:bg-zinc-700 shadow-sm focus:ring-zinc-500 dark:focus:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
+      "bg-gradient-to-r from-zinc-800 to-zinc-900 dark:from-zinc-700 dark:to-zinc-800 text-zinc-50 hover:from-zinc-700 hover:to-zinc-800 dark:hover:from-zinc-600 dark:hover:to-zinc-700 hover:scale-105 shadow-lg shadow-zinc-900/30 dark:shadow-zinc-800/50 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
     secondary:
-      "border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:ring-zinc-500 dark:focus:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
+      "border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
     tertiary:
-      "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 shadow-sm focus:ring-zinc-500 dark:focus:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
-    link: "text-zinc-900 dark:text-zinc-200 hover:text-zinc-700 dark:hover:text-zinc-50 focus:ring-zinc-500 dark:focus:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
+      "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:scale-105 shadow-sm focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
+    link: "text-zinc-900 dark:text-zinc-200 hover:text-zinc-700 dark:hover:text-zinc-50 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
     ghost:
-      "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:ring-zinc-500 dark:focus:ring-zinc-400",
+      "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400",
   };
 
   const sizes = {

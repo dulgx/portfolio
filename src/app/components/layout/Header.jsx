@@ -8,9 +8,9 @@ const SocialLinks = ({ isDarkMode }) => (
       href="https://github.com/dulgx"
       className={`p-2 rounded-full ${
         isDarkMode
-          ? "hover:bg-white/10 backdrop-blur-sm"
-          : "hover:bg-black/5 backdrop-blur-sm"
-      } transition-all duration-300 hover:scale-110`}
+          ? "hover:bg-white/20 backdrop-blur-sm"
+          : "hover:bg-black/10 backdrop-blur-sm"
+      } transition-all duration-300 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30`}
       aria-label="GitHub"
     >
       <Github
@@ -27,9 +27,9 @@ const SocialLinks = ({ isDarkMode }) => (
       href="https://www.linkedin.com/in/dulguun-p-69b06b180/"
       className={`p-2 rounded-full ${
         isDarkMode
-          ? "hover:bg-white/10 backdrop-blur-sm"
-          : "hover:bg-black/5 backdrop-blur-sm"
-      } transition-all duration-300 hover:scale-110`}
+          ? "hover:bg-white/20 backdrop-blur-sm"
+          : "hover:bg-black/10 backdrop-blur-sm"
+      } transition-all duration-300 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30`}
       aria-label="LinkedIn"
     >
       <svg
@@ -55,13 +55,13 @@ const SocialLinks = ({ isDarkMode }) => (
     </a>
 
     <a
-      href="https://twitter.com/yourusername"
+      href="https://dulgx.com"
       className={`p-2 rounded-full ${
         isDarkMode
-          ? "hover:bg-white/10 backdrop-blur-sm"
-          : "hover:bg-black/5 backdrop-blur-sm"
-      } transition-all duration-300 hover:scale-110`}
-      aria-label="Twitter"
+          ? "hover:bg-white/20 backdrop-blur-sm"
+          : "hover:bg-black/10 backdrop-blur-sm"
+      } transition-all duration-300 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30`}
+      aria-label="Portfolio Website"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,9 @@ const SocialLinks = ({ isDarkMode }) => (
             : "text-black/70 hover:text-black"
         }
       >
-        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
     </a>
   </>
@@ -154,14 +156,14 @@ const Header = ({
                   <button
                     key={useScrollNavigation ? item.id : item.name}
                     onClick={() => handleNavigationClick(item)}
-                    className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 overflow-hidden ${
+                    className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30 ${
                       isActive(item)
                         ? isDarkMode
                           ? "bg-white/20 text-white shadow-lg backdrop-blur-md"
                           : "bg-black/20 text-black shadow-lg backdrop-blur-md"
                         : isDarkMode
-                        ? "text-white/70 hover:text-white hover:bg-white/10"
-                        : "text-black/70 hover:text-black hover:bg-black/10"
+                        ? "text-white/70 hover:text-white hover:bg-white/20 hover:scale-105"
+                        : "text-black/70 hover:text-black hover:bg-black/20 hover:scale-105"
                     }`}
                     aria-current={isActive(item) ? "page" : undefined}
                   >
@@ -269,27 +271,32 @@ const Header = ({
         </div>
 
         {/* Mobile Navigation Panel */}
-        {navigationItems.length > 0 && isMenuOpen && (
+        {navigationItems.length > 0 && (
           <div
-            className={`md:hidden mt-3 p-4 rounded-2xl backdrop-blur-md border-t transition-all duration-300 ${
-              isDarkMode
-                ? "bg-black/20 border-white/10"
-                : "bg-white/20 border-black/10"
+            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+              isMenuOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"
             }`}
           >
+            <div
+              className={`p-4 rounded-2xl backdrop-blur-md border-t transition-all duration-300 ${
+                isDarkMode
+                  ? "bg-black/20 border-white/10"
+                  : "bg-white/20 border-black/10"
+              }`}
+            >
             <div className="space-y-2">
               {navigationItems.map((item) => (
                 <button
                   key={useScrollNavigation ? item.id : item.name}
                   onClick={() => handleNavigationClick(item)}
-                  className={`w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-3 backdrop-blur-sm ${
+                  className={`w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-3 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30 ${
                     isActive(item)
                       ? isDarkMode
                         ? "bg-white/20 text-white shadow-lg"
                         : "bg-black/20 text-black shadow-lg"
                       : isDarkMode
-                      ? "text-white/70 hover:text-white hover:bg-white/10"
-                      : "text-black/70 hover:text-black hover:bg-black/10"
+                      ? "text-white/70 hover:text-white hover:bg-white/20"
+                      : "text-black/70 hover:text-black hover:bg-black/20"
                   }`}
                 >
                   {useScrollNavigation ? (
@@ -310,6 +317,7 @@ const Header = ({
               }`}
             >
               <SocialLinks isDarkMode={isDarkMode} />
+            </div>
             </div>
           </div>
         )}
