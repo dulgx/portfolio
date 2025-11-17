@@ -113,9 +113,9 @@ export default function Home() {
     });
   }, []);
 
-  // Gradient overlay retains vibrancy but background behind video is pure black
+  // Gradient overlay - reduced opacity for better video visibility
   const overlayStyle = {
-    background: isDarkMode ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.2)",
+    background: isDarkMode ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0.2)",
     position: "absolute",
     inset: 0,
     zIndex: 1,
@@ -123,7 +123,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-black">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-zinc-950 via-zinc-900 to-black">
       {/* Fullscreen video background */}
       <video
         className="fixed inset-0 w-full h-full object-cover"

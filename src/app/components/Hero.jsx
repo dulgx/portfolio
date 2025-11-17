@@ -1,31 +1,12 @@
 import React from "react";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import Button from "./ui/Button";
+import GlassCard from "./ui/GlassCard";
 import profileImg from "../../../public/profile.png";
-
-// Glass Card wrapper to create the Apple liquid glass effect
-const GlassCard = ({ isDarkMode, children }) => {
-  const bgColor = isDarkMode ? "bg-white/10" : "bg-white/30";
-  const borderColor = isDarkMode ? "border-white/20" : "border-white/20";
-  return (
-    <div
-      className={`relative p-6 rounded-2xl ${bgColor} ${borderColor} border backdrop-blur-xl shadow-lg overflow-hidden`}
-    >
-      {/* Highlight circles for extra liquid-glass shine */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute -top-8 -left-8 w-24 h-24 bg-white/20 rounded-full filter blur-2xl"></div>
-        <div className="absolute -bottom-8 -right-12 w-32 h-32 bg-white/10 rounded-full filter blur-3xl"></div>
-      </div>
-
-      <div className="relative z-10">{children}</div>
-    </div>
-  );
-};
 
 const ContactInfo = ({ isDarkMode }) => {
   const contactItems = [
     { icon: MapPin, text: "Ulaanbaatar, Mongolia", href: null },
-    { icon: Phone, text: "", href: "" },
     {
       icon: Mail,
       text: "dulguunnu@gmail.com",
@@ -35,7 +16,7 @@ const ContactInfo = ({ isDarkMode }) => {
   ];
 
   return (
-    <div className="flex flex-wrap gap-y-2 gap-x-4 text-sm">
+    <div className="flex flex-wrap gap-3 md:gap-4 text-sm">
       {contactItems.map((item, index) => {
         const IconComponent = item.icon;
         const content = (
@@ -151,11 +132,11 @@ const Hero = ({ isDarkMode }) => {
             <div className="md:w-2/3 md:pl-12">
               {/* Name and Title */}
               <div className="mb-6">
-                <h1 className="text-4xl md:text-5xl font-bold mb-2 font-sans text-zinc-900 dark:text-zinc-50">
+                <h1 className="text-4xl md:text-5xl font-bold mb-2 font-sans bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-zinc-50 dark:via-zinc-300 dark:to-zinc-50 bg-clip-text text-transparent">
                   Dulguun
                 </h1>
-                <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-300 mb-4 font-sans">
-                  Creating with code, driven by passion.
+                <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-300 mb-4 font-sans font-medium">
+                  Full Stack Developer & Odoo Specialist
                 </p>
 
                 {/* Contact Information */}

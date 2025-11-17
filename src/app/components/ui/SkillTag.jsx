@@ -36,7 +36,7 @@ const SkillTag = ({
   };
 
   const clickableClasses =
-    onClick || href ? "cursor-pointer hover:scale-105" : "";
+    onClick || href ? "cursor-pointer hover:scale-105 transition-transform" : "cursor-default";
 
   const classes = `${baseClasses} ${sizes[size]} ${variants[variant]} ${clickableClasses} ${className}`;
 
