@@ -159,7 +159,7 @@ export default function Home() {
         style={{
           '--x': `${mousePosition.x}%`,
           '--y': `${mousePosition.y}%`
-        } as React.CSSProperties}
+        }}
       />
 
       {/* Premium grain texture overlay */}
