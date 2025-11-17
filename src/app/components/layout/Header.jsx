@@ -8,17 +8,17 @@ const SocialLinks = ({ isDarkMode }) => (
       href="https://github.com/dulgx"
       className={`p-2 rounded-full ${
         isDarkMode
-          ? "hover:bg-white/20 backdrop-blur-sm"
-          : "hover:bg-black/10 backdrop-blur-sm"
-      } transition-all duration-300 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30`}
+          ? "hover:bg-cyan-500/20 backdrop-blur-sm"
+          : "hover:bg-cyan-500/10 backdrop-blur-sm"
+      } transition-all duration-300 hover:scale-110 magnetic focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50 dark:focus-visible:ring-cyan-400/50 group`}
       aria-label="GitHub"
     >
       <Github
         size={18}
         className={
           isDarkMode
-            ? "text-white/70 hover:text-white"
-            : "text-black/70 hover:text-black"
+            ? "text-white/70 group-hover:text-cyan-400"
+            : "text-black/70 group-hover:text-cyan-600"
         }
       />
     </a>
@@ -27,9 +27,9 @@ const SocialLinks = ({ isDarkMode }) => (
       href="https://www.linkedin.com/in/dulguun-p-69b06b180/"
       className={`p-2 rounded-full ${
         isDarkMode
-          ? "hover:bg-white/20 backdrop-blur-sm"
-          : "hover:bg-black/10 backdrop-blur-sm"
-      } transition-all duration-300 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30`}
+          ? "hover:bg-cyan-500/20 backdrop-blur-sm"
+          : "hover:bg-cyan-500/10 backdrop-blur-sm"
+      } transition-all duration-300 hover:scale-110 magnetic focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50 dark:focus-visible:ring-cyan-400/50 group`}
       aria-label="LinkedIn"
     >
       <svg
@@ -44,8 +44,8 @@ const SocialLinks = ({ isDarkMode }) => (
         strokeLinejoin="round"
         className={
           isDarkMode
-            ? "text-white/70 hover:text-white"
-            : "text-black/70 hover:text-black"
+            ? "text-white/70 group-hover:text-cyan-400"
+            : "text-black/70 group-hover:text-cyan-600"
         }
       >
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -58,9 +58,9 @@ const SocialLinks = ({ isDarkMode }) => (
       href="https://dulgx.com"
       className={`p-2 rounded-full ${
         isDarkMode
-          ? "hover:bg-white/20 backdrop-blur-sm"
-          : "hover:bg-black/10 backdrop-blur-sm"
-      } transition-all duration-300 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30`}
+          ? "hover:bg-cyan-500/20 backdrop-blur-sm"
+          : "hover:bg-cyan-500/10 backdrop-blur-sm"
+      } transition-all duration-300 hover:scale-110 magnetic focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50 dark:focus-visible:ring-cyan-400/50 group`}
       aria-label="Portfolio Website"
     >
       <svg
@@ -75,8 +75,8 @@ const SocialLinks = ({ isDarkMode }) => (
         strokeLinejoin="round"
         className={
           isDarkMode
-            ? "text-white/70 hover:text-white"
-            : "text-black/70 hover:text-black"
+            ? "text-white/70 group-hover:text-cyan-400"
+            : "text-black/70 group-hover:text-cyan-600"
         }
       >
         <circle cx="12" cy="12" r="10" />
@@ -156,11 +156,11 @@ const Header = ({
                   <button
                     key={useScrollNavigation ? item.id : item.name}
                     onClick={() => handleNavigationClick(item)}
-                    className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 dark:focus-visible:ring-white/30 ${
+                    className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50 dark:focus-visible:ring-cyan-400/50 magnetic ${
                       isActive(item)
                         ? isDarkMode
-                          ? "bg-white/20 text-white shadow-lg backdrop-blur-md"
-                          : "bg-black/20 text-black shadow-lg backdrop-blur-md"
+                          ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-white shadow-lg backdrop-blur-md iridescent-border glow"
+                          : "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-black shadow-lg backdrop-blur-md iridescent-border glow"
                         : isDarkMode
                         ? "text-white/70 hover:text-white hover:bg-white/20 hover:scale-105"
                         : "text-black/70 hover:text-black hover:bg-black/20 hover:scale-105"

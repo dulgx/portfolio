@@ -19,14 +19,14 @@ const Button = ({
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-zinc-800 to-zinc-900 dark:from-zinc-700 dark:to-zinc-800 text-zinc-50 hover:from-zinc-700 hover:to-zinc-800 dark:hover:from-zinc-600 dark:hover:to-zinc-700 hover:scale-105 shadow-lg shadow-zinc-900/30 dark:shadow-zinc-800/50 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
+      "bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-500 dark:to-blue-500 text-white hover:from-cyan-500 hover:to-blue-500 dark:hover:from-cyan-400 dark:hover:to-blue-400 hover:scale-105 shadow-lg shadow-cyan-500/50 dark:shadow-cyan-400/30 hover:shadow-xl hover:shadow-cyan-500/60 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed glow magnetic relative overflow-hidden",
     secondary:
-      "border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
+      "border-2 border-cyan-500/50 dark:border-cyan-400/50 text-zinc-900 dark:text-zinc-100 hover:bg-cyan-500/10 dark:hover:bg-cyan-400/10 hover:border-cyan-500 dark:hover:border-cyan-400 hover:scale-105 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed magnetic iridescent-border",
     tertiary:
-      "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:scale-105 shadow-sm focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
-    link: "text-zinc-900 dark:text-zinc-200 hover:text-zinc-700 dark:hover:text-zinc-50 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed",
+      "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:scale-105 shadow-sm focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 disabled:opacity-50 disabled:cursor-not-allowed magnetic",
+    link: "text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed",
     ghost:
-      "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400",
+      "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-800 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 magnetic",
   };
 
   const sizes = {
