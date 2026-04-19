@@ -24,7 +24,7 @@ export default function Experience() {
           </div>
           <ul>
             <li>
-              Lead dev on the <b>core loan automation system</b>, replacing
+              Dev on the <b>core loan automation system</b>, replacing
               Excel-based workflows with an ERP pipeline —{" "}
               <b>50–60% reduction</b> in manual labor.
             </li>

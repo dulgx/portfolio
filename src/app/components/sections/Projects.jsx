@@ -45,7 +45,7 @@ const projects = [
     type: "module",
     name: "Collateral Management",
     desc: "Registration and valuation module with third-party integrations — improved data accuracy and valuation speed.",
-    stack: ["Odoo", "Python", "APIs"],
+    stack: ["Odoo", "Python", "APIs", "AWS S3"],
   },
   {
     idx: "07",
@@ -53,7 +53,7 @@ const projects = [
     type: "integration",
     name: "E-Barimt Tax Pipeline",
     desc: "Connected the loan pipeline to Mongolia's tax receipt system — every transaction auto-generates and submits its own И-Баримт.",
-    stack: ["Odoo", "Python", "Tax API"],
+    stack: ["Odoo", "Python", "Tax API", "AWS Lambda", "AWS SQS", "PostgreSQL"],
   },
   {
     idx: "08",
