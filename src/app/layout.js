@@ -1,25 +1,29 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jetbrainsMono = JetBrains_Mono({
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  weight: ["400", "500"],
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata = {
-  title: "PORTFOLIO | DULGUUN",
-  description: "Portfolio site of Dulguun",
+  title: "dulguun.purevtseren — software developer",
+  description: "Developer at Sendly NBFI, Mongolia. I build Odoo ERP and web systems that automate loan workflows, using React, Next.js, Python, and JavaScript.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={`${jetbrainsMono.variable} ${inter.variable}`}>
+      <body style={{ fontFamily: "var(--font-jetbrains), 'JetBrains Mono', ui-monospace, Consolas, monospace" }}>
         {children}
       </body>
     </html>

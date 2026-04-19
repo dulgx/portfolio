@@ -1,156 +1,221 @@
-// src/app/components/sections/Projects.jsx - Featured Projects with Liquid Glass Cards
-import React from "react";
-import {
-  Code,
-  Layout,
-  MessageSquare,
-  Briefcase,
-  Github,
-  ExternalLink,
-  ChevronRight,
-} from "lucide-react";
-import SectionHeader from "../ui/SectionHeader";
-import SkillTag from "../ui/SkillTag";
-import Button from "../ui/Button";
-import GlassCard from "../ui/GlassCard";
+const projects = [
+  {
+    idx: "02",
+    date: "2024 · Q3",
+    type: "web.app",
+    name: "Sendly Intranet",
+    desc: "Employee directory, branch contacts, news feed, Knowledge Base, suggestions — centralized everything that used to live in email and Excel.",
+    stack: ["Next.js", "React", "Tailwind"],
+  },
+  {
+    idx: "03",
+    date: "2024 · Q4",
+    type: "integration",
+    name: "HUR · KYC pipeline",
+    desc: "Plugged the loan system into Mongolia's government data-exchange backbone to auto-fetch and verify customer information.",
+    stack: ["Odoo", "Python", "REST"],
+  },
+  {
+    idx: "04",
+    date: "2025 · Q1",
+    type: "module",
+    name: "Loan Committee",
+    desc: "Digitized committee decision-making — member voting, meeting minutes, auditable decision approval, full search.",
+    stack: ["Odoo", "PostgreSQL", "XML"],
+  },
+  {
+    idx: "05",
+    date: "2025 · Q2",
+    type: "module",
+    name: "Collateral Management",
+    desc: "Registration and valuation module with third-party integrations — improved data accuracy and valuation speed.",
+    stack: ["Odoo", "Python", "APIs"],
+  },
+  {
+    idx: "06",
+    date: "2025 · Q3",
+    type: "integration",
+    name: "E-Barimt Tax Pipeline",
+    desc: "Connected the loan pipeline to Mongolia's tax receipt system — every transaction auto-generates and submits its own И-Баримт.",
+    stack: ["Odoo", "Python", "Tax API"],
+  },
+];
 
-const ProjectCard = ({
-  title,
-  description,
-  technologies,
-  icon: IconComponent,
-  pattern,
-  githubUrl,
-  liveUrl,
-  isDarkMode,
-}) => (
-  <GlassCard isDarkMode={isDarkMode}>
-    <div className="group">
-      {/* Patterned header area */}
-      <div className="h-48 relative overflow-hidden rounded-t-2xl">
-        <div
-          className="absolute inset-0"
-          style={{ ...pattern, opacity: 0.5 }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-500/10 to-zinc-900/40 dark:from-zinc-800/40 dark:to-zinc-950/80" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          {IconComponent && (
-            <IconComponent
-              size={48}
-              className="text-zinc-900/30 dark:text-zinc-300/20"
-            />
-          )}
-        </div>
-        <div className="absolute top-4 right-4 flex space-x-2">
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              className="p-2 bg-white/90 dark:bg-zinc-800/90 rounded-full text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            >
-              <Github size={16} />
-            </a>
-          )}
-          {liveUrl && (
-            <a
-              href={liveUrl}
-              className="p-2 bg-white/90 dark:bg-zinc-800/90 rounded-full text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            >
-              <ExternalLink size={16} />
-            </a>
-          )}
-        </div>
-      </div>
-
-      {/* Text content */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 mb-2 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors">
-          {title}
-        </h3>
-        <p className="text-zinc-600 dark:text-zinc-400 mb-4">{description}</p>
-
-        <div className="flex flex-wrap gap-2 mb-4">
-          {technologies.map((tech, index) => (
-            <SkillTag key={index} size="sm">
-              {tech}
-            </SkillTag>
-          ))}
-        </div>
-
-        <a
-          href={liveUrl || "#"}
-          className="inline-flex items-center text-sm font-medium text-zinc-900 dark:text-zinc-200 hover:text-zinc-700 dark:hover:text-zinc-50 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Project <ChevronRight size={16} className="ml-1" />
-        </a>
-      </div>
-    </div>
-  </GlassCard>
-);
-
-const Projects = ({ isDarkMode }) => {
-  const dotPattern = {
-    backgroundImage: `radial-gradient(${
-      isDarkMode ? "#27272A" : "#E4E4E7"
-    } 1px, transparent 0)`,
-    backgroundSize: "20px 20px",
-  };
-
-  const photoPattern = {
-    backgroundImage: "url('/screenshot-1.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  };
-
-  const stocklabPattern = {
-    backgroundImage: "url('/screenshot-2.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  };
-
-  const projects = [
-    {
-      title: "React Intranet Employee Directory",
-      description:
-        "Independently developed and deployed an internal employee and file directory web application for the company’s internal use, reinforcing prior knowledge of web development and self-studying React JS and Tailwind CSS.",
-      technologies: ["React", "Tailwind", "Chart.js", "REST API"],
-      pattern: photoPattern,
-      githubUrl: "#",
-      liveUrl: "https://sendly-intranet-copy.vercel.app/",
-    },
-    {
-      title: "Stocklab Web Mock",
-      description:
-        "Developed a mock web interface for Stocklab using React, Tailwind CSS, and Vite. The project demonstrates a modern, responsive UI and rapid prototyping capabilities, focusing on clean design and usability.",
-      technologies: ["React", "Tailwind CSS", "Vite"],
-      pattern: stocklabPattern,
-      githubUrl: "#",
-      liveUrl: "https://dulgx.github.io/stocklab-main/",
-    },
-    {
-      title: "Odoo Collateral Loan Module",
-      description:
-        "Created and developed new modules in the Odoo ERP system, automated loan operations, performed system improvements and maintenance, and fixed errors and bugs as part of the ongoing development process.",
-      technologies: ["Odoo", "Python", "XML", "PostgreSQL"],
-      icon: Code,
-      pattern: dotPattern,
-      githubUrl: "#",
-      liveUrl: "#",
-    },
-  ];
-
+export default function Projects() {
   return (
-    <div className="px-4 py-8 md:p-8 max-w-4xl mx-auto">
-      <SectionHeader title="Featured Projects" />
+    <>
+      <div className="sect-head">
+        <span className="glyph">##</span>
+        <h2>
+          <span className="dim">02 /</span> work
+          <span className="dim">/</span>{" "}
+          <span className="accent">featured</span>
+        </h2>
+        <span className="count">6 systems · shipped</span>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} isDarkMode={isDarkMode} />
+      {/* Featured */}
+      <div className="featured">
+        <div className="fvisual">
+          <span className="stamp">● LIVE · DAILY USE</span>
+          <svg viewBox="0 0 420 340" style={{ width: "100%", height: "auto", maxWidth: "420px" }}>
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4ff4c" />
+              </marker>
+              <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#62645a" />
+              </marker>
+            </defs>
+
+            <g fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#62645a" letterSpacing="0.08em">
+              <text x="10" y="20">BEFORE</text>
+            </g>
+            <g transform="translate(10,32)">
+              <rect width="110" height="54" fill="none" stroke="#62645a" strokeDasharray="3 3" />
+              <text x="55" y="22" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="13" fill="#a8a694">Excel.xlsx</text>
+              <text x="55" y="38" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a">3 sheets · 40+ formulas</text>
+              <text x="55" y="48" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a">manual re-key</text>
+            </g>
+
+            <line x1="122" y1="60" x2="172" y2="60" stroke="#d4ff4c" strokeWidth="1.5" markerEnd="url(#arr)" />
+            <text x="147" y="54" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#d4ff4c">migrate()</text>
+
+            <g fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#62645a" letterSpacing="0.08em">
+              <text x="178" y="20">AFTER</text>
+            </g>
+            <g transform="translate(178,32)">
+              <rect width="232" height="54" fill="#d4ff4c" />
+              <text x="116" y="22" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="15" fontWeight="600" fill="#0d0e0c">LoanCore.py</text>
+              <text x="116" y="38" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#0d0e0c">scoring · DTI · eligibility</text>
+              <text x="116" y="48" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#0d0e0c">automated · audited · logged</text>
+            </g>
+
+            <g fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#62645a" letterSpacing="0.08em">
+              <text x="10" y="130">INTEGRATIONS</text>
+            </g>
+            <g transform="translate(10,144)" fontFamily="Inter, sans-serif">
+              <g>
+                <rect width="96" height="50" fill="none" stroke="#eeece2" />
+                <text x="48" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">HUR</text>
+                <text x="48" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">gov. data exchange</text>
+              </g>
+              <g transform="translate(104,0)">
+                <rect width="96" height="50" fill="none" stroke="#eeece2" />
+                <text x="48" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">KYC</text>
+                <text x="48" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">auto-verify customer</text>
+              </g>
+              <g transform="translate(208,0)">
+                <rect width="96" height="50" fill="none" stroke="#eeece2" />
+                <text x="48" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">Collateral</text>
+                <text x="48" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">3rd-party valuation</text>
+              </g>
+              <g transform="translate(312,0)">
+                <rect width="96" height="50" fill="none" stroke="#eeece2" />
+                <text x="48" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">E-Barimt</text>
+                <text x="48" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">tax-receipt pipeline</text>
+              </g>
+            </g>
+
+            <line x1="58" y1="144" x2="58" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
+            <line x1="162" y1="144" x2="162" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
+            <line x1="266" y1="144" x2="266" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
+            <line x1="370" y1="144" x2="370" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
+
+            <g fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#62645a" letterSpacing="0.08em">
+              <text x="10" y="226">OUTPUTS</text>
+            </g>
+            <g transform="translate(10,236)" fontFamily="Inter,sans-serif">
+              <text x="0" y="16" fontSize="14" fill="#eeece2">decisions · committee votes · tax receipts</text>
+              <text x="0" y="34" fontFamily="JetBrains Mono,monospace" fontSize="9" fill="#62645a">generated, logged, archived — no human re-keying</text>
+            </g>
+
+            <g transform="translate(10,282)" fontFamily="JetBrains Mono,monospace" fontSize="10">
+              <rect x="-2" y="-2" width="398" height="46" fill="none" stroke="#d4ff4c" strokeDasharray="2 3" />
+              <text x="8" y="16" fill="#d4ff4c" letterSpacing="0.08em">IMPACT</text>
+              <text x="8" y="34" fill="#eeece2" fontFamily="Inter,sans-serif" fontSize="13">
+                manual labor on loan processing:{" "}
+                <tspan fill="#d4ff4c" fontWeight="600">−50 to −60%</tspan>
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <div className="ftext">
+          <div className="kicker">
+            FEATURED · 2024—present · <span className="on">● sendly-nbfi</span>
+          </div>
+          <h3>
+            A loan system that{" "}
+            <em>
+              doesn&apos;t need
+              <br />
+              Excel anymore
+            </em>
+            .
+          </h3>
+          <p>
+            I rebuilt Sendly&apos;s core loan pipeline inside their ERP:
+            application intake, credit scoring, eligibility math, and
+            debt-to-income ratios — everything that used to live in three
+            spreadsheets across four desks.
+          </p>
+          <p>
+            Then I wired it outward: HUR for government data, KYC for
+            verification, a digital loan committee with voting and minutes,
+            collateral management with third-party valuation, and E-Barimt for
+            tax receipts.
+          </p>
+          <div className="fmetrics">
+            <div>
+              <div className="n">−50–60%</div>
+              <div className="l">manual labor</div>
+            </div>
+            <div>
+              <div className="n">6</div>
+              <div className="l">systems · one ERP</div>
+            </div>
+            <div>
+              <div className="n">daily</div>
+              <div className="l">active users</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ls -la list */}
+      <div style={{ marginTop: "56px" }}>
+        <div className="prompt">
+          <span className="user">dulguun</span>
+          <span className="path">~/work $</span>
+          <span className="cmd">ls -la --sort=impact</span>
+        </div>
+
+        <div className="ls-header">
+          <span>#</span>
+          <span>date</span>
+          <span>type</span>
+          <span>project</span>
+          <span className="stack" style={{ textAlign: "right" }}>stack</span>
+        </div>
+
+        {projects.map((p) => (
+          <div className="ls-row" key={p.idx}>
+            <div className="idx">{p.idx}</div>
+            <div className="date">{p.date}</div>
+            <div className="type">{p.type}</div>
+            <div>
+              <div className="name">{p.name}</div>
+              <div className="desc">{p.desc}</div>
+            </div>
+            <div className="stack">
+              {p.stack.map((t) => (
+                <span className="t" key={t}>{t}</span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
-    </div>
+    </>
   );
-};
-
-export default Projects;
+}
