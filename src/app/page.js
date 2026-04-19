@@ -7,6 +7,7 @@ import Footer from "./components/layout/Footer";
 import Hero from "./components/Hero";
 import About from "./components/sections/About";
 import Projects from "./components/sections/Projects";
+import Personal from "./components/sections/Personal";
 import Experience from "./components/sections/Experience";
 import Stack from "./components/sections/Stack";
 import Beyond from "./components/sections/Beyond";
@@ -24,6 +25,9 @@ export default function Home() {
       </section>
       <section id="work">
         <Projects />
+      </section>
+      <section id="personal">
+        <Personal />
       </section>
       <section id="experience">
         <Experience />

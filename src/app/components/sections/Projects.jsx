@@ -58,7 +58,7 @@ export default function Projects() {
       <div className="featured">
         <div className="fvisual">
           <span className="stamp">● LIVE · DAILY USE</span>
-          <svg viewBox="0 0 420 340" style={{ width: "100%", height: "auto", maxWidth: "420px" }}>
+          <svg viewBox="0 0 460 400" style={{ width: "100%", height: "auto", maxWidth: "460px" }}>
             <defs>
               <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4ff4c" />
@@ -72,23 +72,23 @@ export default function Projects() {
               <text x="10" y="20">BEFORE</text>
             </g>
             <g transform="translate(10,32)">
-              <rect width="110" height="54" fill="none" stroke="#62645a" strokeDasharray="3 3" />
-              <text x="55" y="22" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="13" fill="#a8a694">Excel.xlsx</text>
-              <text x="55" y="38" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a">3 sheets · 40+ formulas</text>
-              <text x="55" y="48" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a">manual re-key</text>
+              <rect width="116" height="54" fill="none" stroke="#62645a" strokeDasharray="3 3" />
+              <text x="58" y="22" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="13" fill="#a8a694">Excel.xlsx</text>
+              <text x="58" y="38" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a">3 sheets · 40+ formulas</text>
+              <text x="58" y="48" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a">manual re-key</text>
             </g>
 
-            <line x1="122" y1="60" x2="172" y2="60" stroke="#d4ff4c" strokeWidth="1.5" markerEnd="url(#arr)" />
-            <text x="147" y="54" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#d4ff4c">migrate()</text>
+            <line x1="128" y1="60" x2="178" y2="60" stroke="#d4ff4c" strokeWidth="1.5" markerEnd="url(#arr)" />
+            <text x="153" y="54" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#d4ff4c">migrate()</text>
 
             <g fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#62645a" letterSpacing="0.08em">
-              <text x="178" y="20">AFTER</text>
+              <text x="184" y="20">AFTER</text>
             </g>
-            <g transform="translate(178,32)">
-              <rect width="232" height="54" fill="#d4ff4c" />
-              <text x="116" y="22" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="15" fontWeight="600" fill="#0d0e0c">LoanCore.py</text>
-              <text x="116" y="38" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#0d0e0c">scoring · DTI · eligibility</text>
-              <text x="116" y="48" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#0d0e0c">automated · audited · logged</text>
+            <g transform="translate(184,32)">
+              <rect width="266" height="54" fill="#d4ff4c" />
+              <text x="133" y="22" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="15" fontWeight="600" fill="#0d0e0c">LoanCore.py</text>
+              <text x="133" y="38" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#0d0e0c">scoring · DTI · eligibility</text>
+              <text x="133" y="48" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#0d0e0c">automated · audited · logged</text>
             </g>
 
             <g fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#62645a" letterSpacing="0.08em">
@@ -96,31 +96,31 @@ export default function Projects() {
             </g>
             <g transform="translate(10,144)" fontFamily="Inter, sans-serif">
               <g>
-                <rect width="96" height="50" fill="none" stroke="#eeece2" />
-                <text x="48" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">HUR</text>
-                <text x="48" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">gov. data exchange</text>
+                <rect width="106" height="50" fill="none" stroke="#eeece2" />
+                <text x="53" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">HUR</text>
+                <text x="53" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">gov. data exchange</text>
               </g>
-              <g transform="translate(104,0)">
-                <rect width="96" height="50" fill="none" stroke="#eeece2" />
-                <text x="48" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">KYC</text>
-                <text x="48" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">auto-verify customer</text>
+              <g transform="translate(114,0)">
+                <rect width="106" height="50" fill="none" stroke="#eeece2" />
+                <text x="53" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">KYC</text>
+                <text x="53" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">auto-verify customer</text>
               </g>
-              <g transform="translate(208,0)">
-                <rect width="96" height="50" fill="none" stroke="#eeece2" />
-                <text x="48" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">Collateral</text>
-                <text x="48" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">3rd-party valuation</text>
+              <g transform="translate(228,0)">
+                <rect width="106" height="50" fill="none" stroke="#eeece2" />
+                <text x="53" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">Collateral</text>
+                <text x="53" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">3rd-party valuation</text>
               </g>
-              <g transform="translate(312,0)">
-                <rect width="96" height="50" fill="none" stroke="#eeece2" />
-                <text x="48" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">E-Barimt</text>
-                <text x="48" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">tax-receipt pipeline</text>
+              <g transform="translate(342,0)">
+                <rect width="106" height="50" fill="none" stroke="#eeece2" />
+                <text x="53" y="20" textAnchor="middle" fontSize="12" fontWeight="600" fill="#eeece2">E-Barimt</text>
+                <text x="53" y="36" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">tax-receipt pipeline</text>
               </g>
             </g>
 
-            <line x1="58" y1="144" x2="58" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
-            <line x1="162" y1="144" x2="162" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
-            <line x1="266" y1="144" x2="266" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
-            <line x1="370" y1="144" x2="370" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
+            <line x1="63" y1="144" x2="63" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
+            <line x1="177" y1="144" x2="177" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
+            <line x1="291" y1="144" x2="291" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
+            <line x1="405" y1="144" x2="405" y2="108" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr2)" />
 
             <g fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#62645a" letterSpacing="0.08em">
               <text x="10" y="226">OUTPUTS</text>
@@ -131,11 +131,23 @@ export default function Projects() {
             </g>
 
             <g transform="translate(10,282)" fontFamily="JetBrains Mono,monospace" fontSize="10">
-              <rect x="-2" y="-2" width="398" height="46" fill="none" stroke="#d4ff4c" strokeDasharray="2 3" />
+              <rect x="-2" y="-2" width="440" height="104" fill="none" stroke="#d4ff4c" strokeDasharray="2 3" />
               <text x="8" y="16" fill="#d4ff4c" letterSpacing="0.08em">IMPACT</text>
               <text x="8" y="34" fill="#eeece2" fontFamily="Inter,sans-serif" fontSize="13">
                 manual labor on loan processing:{" "}
                 <tspan fill="#d4ff4c" fontWeight="600">−50 to −60%</tspan>
+              </text>
+              <text x="8" y="52" fill="#eeece2" fontFamily="Inter,sans-serif" fontSize="13">
+                loan approval cycle time:{" "}
+                <tspan fill="#d4ff4c" fontWeight="600">days → hours</tspan>
+              </text>
+              <text x="8" y="70" fill="#eeece2" fontFamily="Inter,sans-serif" fontSize="13">
+                customer data entry errors:{" "}
+                <tspan fill="#d4ff4c" fontWeight="600">near zero</tspan>
+              </text>
+              <text x="8" y="88" fill="#eeece2" fontFamily="Inter,sans-serif" fontSize="13">
+                committee decisions:{" "}
+                <tspan fill="#d4ff4c" fontWeight="600">100% digital · auditable</tspan>
               </text>
             </g>
           </svg>
