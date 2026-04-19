@@ -57,8 +57,6 @@ export default function About() {
             <span className="v">
               <a href="mailto:dulguunnu@gmail.com">dulguunnu@gmail.com</a>
             </span>
-            <span className="k">phone</span>
-            <span className="v">+976 8815 4711</span>
             <span className="k">web</span>
             <span className="v">
               <a href="https://dulgx.com">dulgx.com</a>

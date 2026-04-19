@@ -22,10 +22,6 @@ export default function Contact() {
           </div>
         </div>
         <div>
-          <div className="k">PHONE</div>
-          <div className="v">+976 · 8815 · 4711</div>
-        </div>
-        <div>
           <div className="k">SITE</div>
           <div className="v">
             <a href="https://dulgx.com">dulgx.com</a>
