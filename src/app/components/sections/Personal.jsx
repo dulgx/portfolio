@@ -156,7 +156,7 @@ export default function Personal() {
         <div className="prompt">
           <span className="user">dulguun</span>
           <span className="path">~/personal $</span>
-          <span className="cmd">ls -la --sort=date</span>
+          <span className="cmd">ls -la --sort=impact</span>
         </div>
 
         <div className="ls-header">

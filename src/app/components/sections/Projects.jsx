@@ -1,6 +1,22 @@
 const projects = [
   {
+    idx: "01",
+    date: "2024 · Q1–Q2",
+    type: "system",
+    name: "Loan Decision Automation",
+    desc: "End-to-end automation of loan application to decision flow — intake, scoring, risk checks, and approval routing, replacing manual Excel-based workflows.",
+    stack: ["Odoo", "Python", "PostgreSQL"],
+  },
+  {
     idx: "02",
+    date: "2024 · Q2–Q3",
+    type: "integration",
+    name: "Credit Scoring (Sain Score · Buren Score)",
+    desc: "Integrated external credit scoring systems into the loan pipeline — automated fetching, evaluation, and decision support using Sain Score and Buren Score.",
+    stack: ["Odoo", "Python", "REST"],
+  },
+  {
+    idx: "03",
     date: "2024 · Q3",
     type: "web.app",
     name: "Sendly Intranet",
@@ -8,15 +24,15 @@ const projects = [
     stack: ["Next.js", "React", "Tailwind"],
   },
   {
-    idx: "03",
+    idx: "04",
     date: "2024 · Q4",
     type: "integration",
     name: "HUR · KYC pipeline",
     desc: "Plugged the loan system into Mongolia's government data-exchange backbone to auto-fetch and verify customer information.",
-    stack: ["Odoo", "Python", "REST"],
+    stack: ["Odoo", "Python", "REST", "FastAPI", "PostgreSQL"],
   },
   {
-    idx: "04",
+    idx: "05",
     date: "2025 · Q1",
     type: "module",
     name: "Loan Committee",
@@ -24,7 +40,7 @@ const projects = [
     stack: ["Odoo", "PostgreSQL", "XML"],
   },
   {
-    idx: "05",
+    idx: "06",
     date: "2025 · Q2",
     type: "module",
     name: "Collateral Management",
@@ -32,12 +48,20 @@ const projects = [
     stack: ["Odoo", "Python", "APIs"],
   },
   {
-    idx: "06",
-    date: "2025 · Q3",
+    idx: "07",
+    date: "2025 · Q4",
     type: "integration",
     name: "E-Barimt Tax Pipeline",
     desc: "Connected the loan pipeline to Mongolia's tax receipt system — every transaction auto-generates and submits its own И-Баримт.",
     stack: ["Odoo", "Python", "Tax API"],
+  },
+  {
+    idx: "08",
+    date: "2026 · Q1",
+    type: "web.app",
+    name: "Loan Mini App (Frontend Contribution)",
+    desc: "Contributed to the customer-facing loan mini app — improved UX flows, application steps, and data validation for smoother loan requests.",
+    stack: ["Next.js", "React", "Tailwind"],
   },
 ];
 
@@ -51,7 +75,7 @@ export default function Projects() {
           <span className="dim">/</span>{" "}
           <span className="accent">featured</span>
         </h2>
-        <span className="count">6 systems · shipped</span>
+        <span className="count">8 systems · shipped</span>
       </div>
 
       {/* Featured */}
