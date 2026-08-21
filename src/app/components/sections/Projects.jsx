@@ -63,6 +63,14 @@ const projects = [
     desc: "Contributed to the customer-facing loan mini app — improved UX flows, application steps, and data validation for smoother loan requests.",
     stack: ["Next.js", "React", "Tailwind"],
   },
+  {
+    idx: "09",
+    date: "2026 · Present",
+    type: "saas.platform",
+    name: "Multi-tenant SaaS ERP Platform",
+    desc: "Multi-tenant ERP for a regulated financial institution, aligned to ISO/IEC 27001:2022 — tenant isolation enforced at the database layer via PostgreSQL Row-Level Security (FORCE + fail-closed) rather than app middleware, with a CASL permission engine, ltree org hierarchy, append-only partitioned audit log, and 17 ADRs for audit traceability.",
+    stack: ["Next.js 15", "TypeScript", "PostgreSQL 16", "Drizzle", "RLS", "Redis", "Azure DevOps"],
+  },
 ];
 
 export default function Projects() {
@@ -75,7 +83,7 @@ export default function Projects() {
           <span className="dim">/</span>{" "}
           <span className="accent">featured</span>
         </h2>
-        <span className="count">8 systems · shipped</span>
+        <span className="count">9 systems · shipped</span>
       </div>
 
       {/* Featured */}
