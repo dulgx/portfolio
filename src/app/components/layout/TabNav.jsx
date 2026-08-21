@@ -23,6 +23,9 @@ export default function TabNav() {
       <div className="tab" onClick={() => scrollTo("experience")}>
         <span className="dot" /> experience.log
       </div>
+      <div className="tab" onClick={() => scrollTo("gallery")}>
+        <span className="dot" /> gallery/
+      </div>
       <div className="tab" onClick={() => scrollTo("contact")}>
         <span className="dot" /> contact.mk
       </div>

@@ -11,6 +11,7 @@ import Personal from "./components/sections/Personal";
 import Experience from "./components/sections/Experience";
 import Stack from "./components/sections/Stack";
 import Beyond from "./components/sections/Beyond";
+import Gallery from "./components/sections/Gallery";
 import Contact from "./components/sections/Contact";
 
 export default function Home() {
@@ -37,6 +38,9 @@ export default function Home() {
       </section>
       <section id="beyond">
         <Beyond />
+      </section>
+      <section id="gallery">
+        <Gallery />
       </section>
       <section className="contact" id="contact">
         <Contact />
