@@ -227,6 +227,121 @@ export default function Projects() {
         </div>
       </div>
 
+      {/* Featured — SaaS ERP */}
+      <div className="featured" style={{ marginTop: "28px" }}>
+        <div className="fvisual">
+          <span className="stamp">● ARCHITECTURE · 2026</span>
+          <svg viewBox="0 0 460 410" style={{ width: "100%", height: "auto", maxWidth: "460px" }}>
+            <defs>
+              <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4ff4c" />
+              </marker>
+              <marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#62645a" />
+              </marker>
+            </defs>
+
+            {/* TENANTS */}
+            <g fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#62645a" letterSpacing="0.08em">
+              <text x="10" y="12">TENANT REQUESTS</text>
+            </g>
+            <g fontFamily="Inter, sans-serif">
+              <rect x="10" y="18" width="205" height="34" fill="none" stroke="#eeece2" />
+              <text x="112" y="35" textAnchor="middle" fontSize="13" fontWeight="600" fill="#eeece2">tenant A</text>
+              <text x="112" y="47" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">org · users · roles</text>
+              <rect x="245" y="18" width="205" height="34" fill="none" stroke="#eeece2" />
+              <text x="347" y="35" textAnchor="middle" fontSize="13" fontWeight="600" fill="#eeece2">tenant B</text>
+              <text x="347" y="47" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">org · users · roles</text>
+            </g>
+            <line x1="112" y1="52" x2="112" y2="62" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr4)" />
+            <line x1="347" y1="52" x2="347" y2="62" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr4)" />
+
+            {/* APP LAYER */}
+            <rect x="10" y="64" width="440" height="46" fill="none" stroke="#62645a" />
+            <text x="20" y="82" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a" letterSpacing="0.08em">APPLICATION LAYER · modular monolith</text>
+            <text x="20" y="100" fontFamily="Inter,sans-serif" fontSize="13" fill="#eeece2">Next.js 15 · CASL (RBAC/ABAC) · Zod · deny-override + Redis cache</text>
+            <line x1="230" y1="110" x2="230" y2="124" stroke="#62645a" strokeWidth="0.8" markerEnd="url(#arr4)" />
+
+            {/* TENANT CONTEXT */}
+            <rect x="10" y="126" width="440" height="46" fill="none" stroke="#d4ff4c" strokeDasharray="3 3" />
+            <text x="20" y="144" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#d4ff4c" letterSpacing="0.08em">TENANT CONTEXT · withTenant()</text>
+            <text x="20" y="162" fontFamily="JetBrains Mono,monospace" fontSize="9.5" fill="#eeece2">set_config(&apos;app.tenant&apos;, id, true) — txn-scoped · PgBouncer-safe</text>
+            <line x1="230" y1="172" x2="230" y2="190" stroke="#d4ff4c" strokeWidth="1.5" markerEnd="url(#arr3)" />
+            <text x="238" y="185" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#d4ff4c">enforced ↓</text>
+
+            {/* DATABASE · RLS */}
+            <rect x="10" y="192" width="440" height="150" fill="none" stroke="#d4ff4c" strokeWidth="1.5" />
+            <text x="20" y="210" fontFamily="JetBrains Mono,monospace" fontSize="9" fill="#d4ff4c" letterSpacing="0.08em">POSTGRESQL 16 · ROW-LEVEL SECURITY</text>
+            <text x="20" y="224" fontFamily="Inter,sans-serif" fontSize="11" fill="#a8a694">ENABLE + FORCE · fail-closed default-deny policy</text>
+
+            <rect x="22" y="236" width="196" height="92" fill="none" stroke="#eeece2" strokeDasharray="2 2" />
+            <text x="120" y="260" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="13" fontWeight="600" fill="#eeece2">tenant A</text>
+            <text x="120" y="278" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">rows WHERE tenant = A</text>
+            <text x="120" y="312" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a">USING + WITH CHECK</text>
+
+            <rect x="242" y="236" width="196" height="92" fill="none" stroke="#eeece2" strokeDasharray="2 2" />
+            <text x="340" y="260" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="13" fontWeight="600" fill="#eeece2">tenant B</text>
+            <text x="340" y="278" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#a8a694">rows WHERE tenant = B</text>
+            <text x="340" y="312" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#62645a">USING + WITH CHECK</text>
+
+            <circle cx="230" cy="282" r="15" fill="#0d0e0c" stroke="#d4ff4c" strokeWidth="1.2" />
+            <text x="230" y="286" textAnchor="middle" fontFamily="Inter,sans-serif" fontSize="14" fill="#d4ff4c">⊘</text>
+            <text x="230" y="308" textAnchor="middle" fontFamily="JetBrains Mono,monospace" fontSize="7" fill="#62645a">no cross-tenant</text>
+
+            {/* GUARANTEE */}
+            <rect x="10" y="352" width="440" height="48" fill="none" stroke="#d4ff4c" strokeDasharray="2 3" />
+            <text x="20" y="370" fontFamily="JetBrains Mono,monospace" fontSize="8" fill="#d4ff4c" letterSpacing="0.08em">GUARANTEE</text>
+            <text x="20" y="387" fontFamily="Inter,sans-serif" fontSize="12.5" fill="#eeece2">one tenant&apos;s data can&apos;t leak into another — even if app code has bugs</text>
+          </svg>
+        </div>
+
+        <div className="ftext">
+          <div className="kicker">
+            FEATURED · 2026—present · <span className="on">● saas-erp</span>
+          </div>
+          <h3>
+            Isolation that lives in the{" "}
+            <em>
+              database,
+              <br />
+              not the middleware
+            </em>
+            .
+          </h3>
+          <p>
+            A multi-tenant SaaS ERP for a regulated financial institution,
+            aligned to ISO/IEC 27001:2022. Tenant isolation is enforced at the
+            database layer — PostgreSQL Row-Level Security with{" "}
+            <b>ENABLE + FORCE</b> and a fail-closed policy — not in application
+            middleware, so it holds even when upper-layer code fails. A{" "}
+            <b>withTenant()</b> wrapper sets a transaction-scoped tenant context
+            that stays correct under PgBouncer transaction pooling.
+          </p>
+          <p>
+            On top of that: an org module with <b>ltree</b> hierarchies and{" "}
+            <b>GiST exclusion constraints</b> for effective-dated records, a{" "}
+            <b>CASL</b> permission engine with deny-override and Redis caching,
+            an append-only partitioned audit log with a CI guard, and{" "}
+            <b>17 ADRs</b> establishing a BRD → ADR → migration → code trail for
+            audit.
+          </p>
+          <div className="fmetrics">
+            <div>
+              <div className="n">0</div>
+              <div className="l">cross-tenant leaks</div>
+            </div>
+            <div>
+              <div className="n">17</div>
+              <div className="l">ADRs · audit trail</div>
+            </div>
+            <div>
+              <div className="n">27001</div>
+              <div className="l">ISO/IEC aligned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ls -la list */}
       <div style={{ marginTop: "56px" }}>
         <div className="prompt">
