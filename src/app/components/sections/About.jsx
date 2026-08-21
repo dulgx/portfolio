@@ -19,7 +19,7 @@ export default function About() {
             <em>JLPT N2</em>.
           </p>
           <p>
-            Back in Ulaanbaatar in 2023 I joined Sendly NBFI on the IT support
+            Back in Ulaanbaatar in 2023 I joined an NBFI on the IT support
             team. I spent nights teaching myself React and shipped the
             company&apos;s first employee directory. That got me onto the
             software team in <b>August 2024</b>, and I&apos;ve been building
@@ -40,12 +40,12 @@ export default function About() {
           </div>
           <div className="file-body">
             <span className="k">name</span>
-            <span className="v">Dulguun Purevtseren</span>
+            <span className="v">dulguun.p</span>
             <span className="k">role</span>
             <span className="v">Software Developer</span>
             <span className="k">company</span>
             <span className="v">
-              <span className="em">@ Sendly NBFI</span>
+              <span className="em">@ NBFI</span>
             </span>
             <span className="k">since</span>
             <span className="v">2023-05 · 3 yrs</span>

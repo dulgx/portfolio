@@ -21,7 +21,7 @@ export default function Hero() {
             <span className="cursor-bar" />
           </h1>
           <p className="pitch">
-            Developer at <b>Sendly NBFI</b>, Mongolia. I build Odoo ERP and web
+            Developer at an <b>NBFI</b> in Mongolia. I build Odoo ERP and web
             systems that automate loan workflows, using React, Next.js, Python,
             and JavaScript.
           </p>
@@ -32,9 +32,6 @@ export default function Hero() {
             </a>
             <a href="#experience">
               <span className="k">→</span> git log
-            </a>
-            <a href="/Dulguun CV.pdf">
-              <span className="k">↓</span> resume.pdf
             </a>
             <a className="primary" href="mailto:dulguunnu@gmail.com">
               $ mail me
@@ -52,7 +49,7 @@ export default function Hero() {
             <dt>role</dt>
             <dd>Software Dev</dd>
             <dt>org</dt>
-            <dd>Sendly NBFI</dd>
+            <dd>NBFI · fintech</dd>
             <dt>location</dt>
             <dd>Ulaanbaatar</dd>
             <dt>langs</dt>

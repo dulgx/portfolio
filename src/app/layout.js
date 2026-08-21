@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "dulguun.purevtseren — software developer",
-  description: "Developer at Sendly NBFI, Mongolia. I build Odoo ERP and web systems that automate loan workflows, using React, Next.js, Python, and JavaScript.",
+  title: "dulguun.p — software developer",
+  description: "Developer at an NBFI in Mongolia. I build Odoo ERP and web systems that automate loan workflows, using React, Next.js, Python, and JavaScript.",
 };
 
 export default function RootLayout({ children }) {

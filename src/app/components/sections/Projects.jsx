@@ -19,7 +19,7 @@ const projects = [
     idx: "03",
     date: "2024 · Q3",
     type: "web.app",
-    name: "Sendly Intranet",
+    name: "Company Intranet",
     desc: "Employee directory, branch contacts, news feed, Knowledge Base, suggestions — centralized everything that used to live in email and Excel.",
     stack: ["Next.js", "React", "Tailwind"],
   },
@@ -179,7 +179,7 @@ export default function Projects() {
 
         <div className="ftext">
           <div className="kicker">
-            FEATURED · 2024—present · <span className="on">● sendly-nbfi</span>
+            FEATURED · 2024—present · <span className="on">● nbfi-erp</span>
           </div>
           <h3>
             A loan system that{" "}
@@ -191,7 +191,7 @@ export default function Projects() {
             .
           </h3>
           <p>
-            I rebuilt Sendly&apos;s core loan pipeline inside their ERP:
+            I rebuilt the company&apos;s core loan pipeline inside their ERP:
             application intake, credit scoring, eligibility math, and
             debt-to-income ratios — everything that used to live in three
             spreadsheets across four desks.

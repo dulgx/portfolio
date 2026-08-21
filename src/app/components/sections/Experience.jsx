@@ -20,7 +20,7 @@ export default function Experience() {
           <h3>feat: move from support to software team</h3>
           <div className="co">
             Software Developer{" "}
-            <span className="at">@ Sendly NBFI</span> · Ulaanbaatar
+            <span className="at">@ NBFI</span> · Ulaanbaatar
           </div>
           <ul>
             <li>
@@ -54,7 +54,7 @@ export default function Experience() {
           <h3>init: first job after Tokyo</h3>
           <div className="co">
             IT / Support Engineer{" "}
-            <span className="at">@ Sendly NBFI</span> · Ulaanbaatar
+            <span className="at">@ NBFI</span> · Ulaanbaatar
           </div>
           <ul>
             <li>
@@ -71,7 +71,7 @@ export default function Experience() {
             </li>
             <li>
               On my own initiative, taught myself React and{" "}
-              <b>shipped Sendly&apos;s first employee directory</b> — the
+              <b>shipped the company&apos;s first employee directory</b> — the
               project that got me onto the software team.
             </li>
           </ul>
